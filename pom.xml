@@ -1,15 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!--<parent>-->
-    <!--<groupId>ws.argo</groupId>-->
-    <!--<artifactId>Argo</artifactId>-->
-    <!--<version>0.4.1</version>-->
-  <!--</parent>-->
-
   <groupId>ws.argo.mcg</groupId>
   <artifactId>MulticastGateway</artifactId>
-  <version>0.4.1</version>
+  <version>1.0.0</version>
   <name>Multicast Gateway</name>
   <description>Provides a sender and receiver for bridging network where multicast would naturally not cross (not multicast routeable - like between segments on the open internet)</description>
 
@@ -33,6 +27,17 @@
     </developer>
   </developers>
 
+  <scm>
+    <connection>scm:git:git@github.com:argoDevelopment/multicastGateway.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:argoDevelopment/multicastGateway.git</developerConnection>
+    <url>https://github.com/argoDevelopment/multicastGateway</url>
+  </scm>
+
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/argoDevelopment/multicastGateway/issues</url>
+  </issueManagement>
+
   <properties>
     <rpm-package-name>argo-gateway</rpm-package-name>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -50,71 +55,9 @@
 
 
   <build>
-    <!--<pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>2.17</version>
-          <configuration>
-            <configLocation>Argo/argo_checks.xml</configLocation>
-            <suppressionsLocation>Argo/suppressions.xml</suppressionsLocation>
-          </configuration>
-          <dependencies>
-            <dependency>
-              <groupId>com.puppycrawl.tools</groupId>
-              <artifactId>checkstyle</artifactId>
-              <version>6.4.1</version>
-            </dependency>
-            <dependency>
-              <groupId>ws.argo</groupId>
-              <artifactId>build-tools</artifactId>
-              <version>0.4.1</version>
-            </dependency>
-          </dependencies>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>findbugs-maven-plugin</artifactId>
-          <version>3.0.1</version>
-          <configuration>
-            <findbugsXmlOutput>true</findbugsXmlOutput>
-            <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-            <xmlOutput>true</xmlOutput>
-            &lt;!&ndash; Optional directory to put findbugs xdoc xml report &ndash;&gt;
-            <xmlOutputDirectory>target/site</xmlOutputDirectory>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>-->
+
     <plugins>
 
-     <!--  <plugin>
-        <groupId>com.google.code.maven-replacer-plugin</groupId>
-        <artifactId>replacer</artifactId>
-        <version>1.5.3</version>
-        <executions>
-          <execution>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>replace</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <outputDir>${basedir}/target/generated-bin</outputDir>
-          <preserveDir>false</preserveDir>
-          <filesToInclude>${basedir}/src/resources/bin/*</filesToInclude>
-          <inputFilePattern>(.*)</inputFilePattern>
-          <outputFilePattern>$1</outputFilePattern>
-          <replacements>
-            <replacement>
-              <token>@JAR_NAME@</token>
-              <value>${project.artifactId}-${project.version}</value>
-            </replacement>
-          </replacements>
-        </configuration>
-      </plugin> -->
       
       <!-- This replacer is for the testing phase and not the production packaging -->
       <plugin>
@@ -159,6 +102,7 @@
               <outputFilePattern>$1</outputFilePattern>
               <replacements>
                 <replacement>
+                  <!--suppress MavenModelInspection -->
                   <token>@JAR_NAME@</token>
                   <value>${project.artifactId}-${project.version}</value>
                 </replacement>
@@ -180,10 +124,12 @@
               <outputFilePattern>$1</outputFilePattern>
               <replacements>
                 <replacement>
+                  <!--suppress MavenModelInspection -->
                   <token>@INSTALL_DIR@</token>
                   <value>/opt/argo</value>
                 </replacement>
                 <replacement>
+                  <!--suppress MavenModelInspection -->
                   <token>@JAR_NAME@</token>
                   <value>${project.artifactId}-${project.version}</value>
                 </replacement>
@@ -210,7 +156,7 @@
         </executions>
         <configuration>
           <excludePackageNames>
-            ws.argo.mcg.ws.argo.mcg.comms
+            ws.argo.mcg.comms
           </excludePackageNames>
         </configuration>
       </plugin>
