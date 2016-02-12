@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    <url>
+      <loc>/404.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Architecture-and-Protocol.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Browser-Client-Application.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Firewall-Changes.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Flexible-Architecture.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Primary-Use-cases.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Probe-Format.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Responder-Out-of-the-box-plugins.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Responder-Plugin-Architecture.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Responder-no_browser-mode.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Response-Format.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Roadmap.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Argo-Security.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Controlling-the-distance-a-probe-can-travel.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Creating-an-Argo-Client.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Creative-uses-of-Argo-Plug-ins.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/FAQ.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/How-often-should-a-client-send-a-probe%3F.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Multicast-Plan.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Service-Record-Examples.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Up-and-running-in-5-minutes.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/Why-Argo-and-not-some-other-SLP.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/argo_docs_support.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/argo_docs_tooltips_source.json</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/home.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/prince-file-list.txt</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/search.json</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/sitemap.xml</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/tag_collaboration.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/tag_content_types.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/tag_formatting.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/tag_getting_started.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/tag_mobile.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/tag_navigation.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/tag_publishing.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/tag_single_sourcing.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/argo_docs/tag_special_layouts.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/title-checker.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/titlepage.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/tocpage.html</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>/urls_mydoc.txt</loc>
+      
+        <last_updated>2016-02-12T10:36:25-05:00</last_updated>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+</urlset>

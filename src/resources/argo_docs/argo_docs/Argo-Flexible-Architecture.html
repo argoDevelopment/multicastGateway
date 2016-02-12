@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+
+ <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Overview of the protocol, architecture and components of Argo">
+<meta name="keywords" content="architecure,  architecture, components, host, deployment, installation">
+<title>Argo Flexible Architecture  | Argo Runtime Service Discovery</title>
+<link rel="stylesheet" type="text/css" href="../css/syntax.css">
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="../css/modern-business.css">
+<link rel="stylesheet" type="text/css" href="../css/lavish-bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/customstyles.css">
+<link rel="stylesheet" type="text/css" href="../css/theme-blue.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="../js/jquery.navgoco.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="../js/toc.js"></script>
+<script src="../js/customscripts.js"></script>
+<link rel="shortcut icon" href="../common_images/favicon.ico" type="image/x-icon">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+ 
+
+<script>
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+
+
+  </head>
+
+<body>
+
+   <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="fa fa-home fa-lg navbar-brand" href="home.html">&nbsp;<span class="projectTitle"> Argo Runtime Service Discovery</span></a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+
+                
+                    
+                        
+                            <li><a href="https://github.com/di2e/Argo" target="_blank">Github Repo</a></li>
+                        
+                    
+                
+
+
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                <li class="dropdown">
+                    
+                        
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                    
+                                        <li><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
+                                    
+                                
+                            </ul>
+                        
+                    
+                </li>
+
+
+                <!-- special insertion -->
+
+               
+                <!-- Send feedback function -->
+<script>
+function SendLinkByMail(href) {
+var subject= "Argo Runtime Service Discovery feedback";
+var body = "I have some feedback about the Argo Flexible Architecture page: ";
+body += window.location.href;
+body += "";
+var uri = "mailto:argodevelopment@gmail.com?subject=";
+uri += encodeURIComponent(subject);
+uri += "&body=";
+uri += encodeURIComponent(body);
+window.location.href = uri;
+}
+</script>
+
+<li><a href="javascript:(function()%7BSendLinkByMail()%3B%7D)()%3B" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+
+
+                <li>
+                    <!-- start search -->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="../js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        SimpleJekyllSearch.init({
+                            searchInput: document.getElementById('search-input'),
+                            resultsContainer: document.getElementById('results-container'),
+                            dataSource: '../search.json',
+                            searchResultTemplate: '<li><a href="{url}" title="Argo Flexible Architecture">{title}</a></li>',
+                        noResultsText: 'No results found.',
+                                limit: 10,
+                                fuzzy: true,
+                        })
+                    </script>
+                    <!-- end search -->
+                </li>
+            
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="col-lg-12">&nbsp;</div>
+
+
+    <!-- Content Row -->
+<div class="row">
+    <!-- Sidebar Column -->
+    <div class="col-md-3">
+
+        <script>
+
+            $(document).ready(function() {
+                // Initialize navgoco with default options
+                $("#mysidebar").navgoco({
+                    caretHtml: '',
+                    accordion: false,
+                    openClass: 'active', // open
+                    save: false, // leave false or nav highlighting doesn't work right
+                    cookie: {
+                        name: 'navgoco',
+                        expires: false,
+                        path: '/'
+                    },
+                    slide: {
+                        duration: 200,
+                        easing: 'linear'
+                    }
+                });
+
+                $("#collapseAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', false);
+                });
+
+                $("#expandAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', true);
+                });
+
+            });
+
+        </script>
+
+
+        <ul id="mysidebar" class="nav">
+
+
+            <span class="siteTagline"><img style="width: 100%" src="../argo_docs/images/main_logo.png"/> </span>
+            <span class="siteTagline"></span>
+            <span class="versionTagline">Version 0.4.1</span>
+
+            
+
+
+            
+                
+                    
+                
+                    
+                        <li><a href="#">Overview</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/home.html">Home</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Up-and-running-in-5-minutes.html">Up and Running in 5 Minutes</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Why-Argo-and-not-some-other-SLP.html">Why Argo and not some other SLP?</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/FAQ.html">FAQ</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">What is Argo?</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/home.html#what-is-runtime-service-discovery">What is Runtime Service Discovery</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Primary-Use-cases.html">Primary Use-Cases</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                     <li class="active"><a href="../argo_docs/Argo-Flexible-Architecture.html">Flexible Architecture</a></li>
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Roadmap.html">Roadmap</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Security.html">Security</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Controlling-the-distance-a-probe-can-travel.html">Controlling the "distance" a probe can travel</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Multicast-Plan.html">Multicast Plan</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Firewall-Changes.html">Firewall Changes</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Browser-Client-Application.html">Argo Service Browser</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Protocol</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Probe-Format.html">Argo Probe Format</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Service-Record-Examples.html">Service Record Examples</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Response-Format.html">Argo Response Format</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Architecture</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Architecture-and-Protocol.html">Architecture and Protocol</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Components</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/tag_getting_started.html">Components Overview</a></li>
+                                        
+                                    
+
+                                    
+                                        <li class="thirdlevel"><a href="#">Responder</a>
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/tag_getting_started.html">Installation</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/tag_formatting.html">Configuration</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-no_browser-mode.html">Responder no_browser mode</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-Out-of-the-box-plugins.html">Responder Out-of-the-box plugins</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-Plugin-Architecture.md">Responder Plugin Architecure</a></li>
+                                                    
+
+                                                
+                                            </ul>
+                                        </li>
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+            
+
+
+                 <!--if you aren't using the accordion, uncomment this block:-->
+                <style>
+                    .center { margin: auto; width: 80%; }
+                </style>
+                <div class="center">
+                     <p align=center class="external">
+                         <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+                     </p>
+                </div>
+
+
+                <!--<div>-->
+                    <!--<form style="border:1px solid #ccc;padding:3px;text-align:center;"-->
+                          <!--action="https://tinyletter.com/argodiscovery" method="post" target="popupwindow"-->
+                          <!--onsubmit="window.open('https://tinyletter.com/argodiscovery', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">-->
+                        <!--<p>-->
+                            <!--<label for="tlemail">Enter your email address</label>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                            <!--<input type="text" style="width:140px" name="email" id="tlemail"/>-->
+                        <!--</p>-->
+                        <!--<input type="hidden" value="1" name="embed"/>-->
+                        <!--<input type="submit" value="Subscribe"/>-->
+                        <!--<p>-->
+                            <!--<a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a>-->
+                        <!--</p>-->
+                    <!--</form>-->
+                <!--</div>-->
+    </div>
+    <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+    <script>$("li.active").parents('li').toggleClass("active");</script>
+    
+
+
+         
+
+
+            <!-- Content Column -->
+            <div class="col-md-9">
+
+                <div class="post-header">
+   <h1 class="post-title-main">Argo Flexible Architecture</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">Overview of the protocol, architecture and components of Argo</div>
+   
+
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+
+<div id="toc"></div>
+
+
+    
+
+  <p>There are a couple of operational components in the Argo architecture. These are similar to other components that you&#39;ll find in other service location protocols. However, with Argo, you have a tremendous amount of flexibility in the implementation, deployment and operation of these components depending on the needs of your application.</p>
+
+<h2 id="argo-components">Argo Components</h2>
+
+<p>The full Argo architecture can be found here.  For review, there are just 3 operational Argo components:</p>
+
+<ul>
+<li>Probe Generator</li>
+<li>Responder</li>
+<li>Asynchronous Response Listener</li>
+</ul>
+
+<p>Each of these components can be employed in a number of different and flexible ways.  Firstly, the components can be deployed in a flexible manner.  Depending on the needs of your application (scalability, security, deployment, etc.) you can employ the Argo components to suit your needs.  The two aspects regarding architecture flexibility is deployment and scaling requirements.</p>
+
+<h2 id="deployment-models">Deployment Models</h2>
+
+<p>In classic service discovery models, the probe responder (or service location query processor) is deployed on each host.  Conversely, registry based service discovery models have a single centralized (or perhaps federated) model where there is a well-known URL for discovery queries.</p>
+
+<p>The default or generic deployment for Argo is per host.  Where each host has its own Responder daemon process running and services probes for services that live on that host.  This classic model is, in fact, the most resilient model.  If a particular host goes down, then only that host&#39;s services are affected from a service discovery perspective.  Further, it prevents exposing a large-grained point of failure to cyber-attacks.</p>
+
+<p>Argo gives you the flexibility to deploy a Responder anywhere along this spectrum that suits your application&#39;s needs.</p>
+
+<p>Deployment models can be separated into two main sections</p>
+
+<ul>
+<li>The Argo Client (Probe sender and Response Listener)</li>
+<li>The Argo Responder</li>
+</ul>
+
+<p>Let&#39;s look at the deployment of the Responder first</p>
+
+<h3 id="one-responder-on-every-host">One Responder On Every Host</h3>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1844785/7235816/d5445564-e75e-11e4-8aed-ed1e012cb077.png" alt="One Responder On Every Host"></p>
+
+<p>One possible architecture is the <code>one Responder on every host</code>.  This is the classic multicast service discovery architecture.  However, you shouldn&#39;t be limited to that.  Especially in a long-distance or WAN model, this might not be the best way to go.</p>
+
+<p>There is really nothing wrong with this model.  In fact, I generally recommend it. This deployment model truly helps realize the &quot;2-node&quot; requirement.</p>
+
+<p><em>Is it possible to put two Responders on a single host?</em></p>
+
+<p>Well, yes actually.  The question is: why would you want to?  I could actually see a couple of custom Responder implementations servicing probes while pulling service records from a number of different sources.  For example, you might have a <a href="https://github.com/di2e/Argo-DDF">OSGi DDF Argo Responder</a> as well as a regular Argo Responder on the same host.  They operate quite differently under the hood, but, in the end, just service probes and send responses to the <code>respondTo:</code> address.</p>
+
+<p>The idea is that there are a vast number of possibilities.  As Argo is a WAN or long-range protocol, we have no idea how you want your service discovery to work for your application or infrastructure.</p>
+
+<h3 id="a-single-responder-for-an-application-deployment">A single Responder for an application deployment</h3>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1844785/7236533/8c4d2b24-e763-11e4-8e4f-61f19df8d0d9.png" alt=""></p>
+
+<p>In the above scenario, you might want to have just a single Argo Responder up and running for a particular set of nodes that might comprise an application deployment context.</p>
+
+<p>You could even have a backup running as a redundant responder should something happen to the main responder, but just remember that both responders will respond to the same probe with the same response.  This is usually not a problem as response listeners should ignore the second</p>
+
+<p>Perhaps the best way to do it is by using something like a Nagios agent or some other monitoring process that will start up a new responder if the main one goes down.</p>
+
+<p><em>So why even bring this up?</em></p>
+
+<p>This one might make more sense if you are using some other service discovery or registry technology, like you are using Eureka, Curator, Zookeeper or even UDDI.</p>
+
+<p>You might be using Argo for the long-range service discovery and the other technology for your short-range, data center or application specific reasons.</p>
+
+<h3 id="a-single-responder-for-a-data-center-virtualization-infrastructure">A single Responder for a Data Center/Virtualization Infrastructure</h3>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1844785/7236892/d91323a8-e765-11e4-92e2-b1d338c02819.png" alt=""></p>
+
+<p>This is similar to the above, except you are running only one Argo Responder for the entire data center.  Again, this is useful if you are using some other service discovery or registry technology, like you are using Eureka, Curator, Zookeeper or even UDDI.</p>
+
+<h3 id="mixing-contexts">Mixing Contexts</h3>
+
+<p><em>Can you have Argo Responders mixed in at multiple levels in  multiple contexts?</em></p>
+
+<p>Yup.  No problem.  The idea here is that there is no hierarchical structure or other artificially applied rules to where your responders go or how they relate to one another.</p>
+
+<p>You could have a &quot;Data Center&quot; responder that is responsible for only a &quot;Data Center&quot; specific set of services mixed in with a bunch of &quot;Application&quot; specific responders responsible for their applications services that should be advertised to the network.  Further, this could be mixed in with Responders on hosts as well as Responders that front other registries like UDDI.  The sky is the limit, really.</p>
+
+<p>If you have redundancy, then don&#39;t worry.  Sure, there will be a little more network overhead - if that&#39;s a problem, you can take care of that.  However, each Argo service instance has a unique identifier that will help you deconflict multiple responses for a particular service instance.  </p>
+
+<h2 id="scaling-up-the-response-listener">Scaling up the Response Listener</h2>
+
+<p>Some applications that need to discover services using Argo might end up getting a large number of responses - like thousands - all coming in very quickly.  </p>
+
+<p>Usually, your average application will only get back a couple of services - maybe even a couple hundred.  The performance characteristics of such a Response Listener are usually quite modest.</p>
+
+<p>Response Listeners are RESTful services.  These services can be easily deployed on application servers that can easily provide scalability to the Response Listener.  </p>
+
+<p>There are circumstances where your Response Listener RESTful service might need to handle a large number of probe responses very quickly.  For example, you have built a &quot;service browser&quot; application that will probe for &quot;all services.&quot;  Such an application will need to be able to handle a large number of service responses very quickly.  </p>
+
+<p>Response Listeners do not need to &quot;attached&quot; to a particular application.  In fact, several applications can <em>share</em> an Argo Response Listener.  Therefore, if you are expecting lots of services, deploy your Response Listener accordingly in an environement resourced appropriately for such volumes of traffic.</p>
+
+
+<div class="tags">
+    
+    
+    <b>Tags: </b>
+    
+
+
+
+
+
+
+
+
+    
+    
+    <a href="tag_architecure.html" class="btn btn-default navbar-btn cursorNorm" role="button">architecure</a>
+    
+    
+    
+</div>
+
+
+
+</div>
+
+
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2016 Argo. All rights reserved. <br />
+<p>Page last updated:</span> January 15, 2015<br/> Site last generated: Feb 12, 2016 <br />
+<p><img src="../common_images/company_logo.png/></p>
+                </div>
+            </div>
+</footer>
+            </div><!-- /.row -->
+
+    </div>    <!-- /.container -->
+
+</body>
+
+
+</html>
+

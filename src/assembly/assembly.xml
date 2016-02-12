@@ -11,6 +11,15 @@
   <fileSets>
 
     <fileSet>
+      <directory>${project.basedir}</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>README*</include>
+        <include>LICENSE*</include>
+      </includes>
+    </fileSet>
+
+    <fileSet>
       <directory>${basedir}/target/generated-assembly-config/bin</directory>
       <outputDirectory>/gateway/bin</outputDirectory>
       <filtered>true</filtered>

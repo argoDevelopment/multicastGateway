@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+
+ <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Security, security ... got to go, got to go.">
+<meta name="keywords" content="roadmapsecurityarchitecture,  plugin, components, deployment, installation, security">
+<title>Controlling the "distance" a probe can travel  | Argo Runtime Service Discovery</title>
+<link rel="stylesheet" type="text/css" href="../css/syntax.css">
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="../css/modern-business.css">
+<link rel="stylesheet" type="text/css" href="../css/lavish-bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/customstyles.css">
+<link rel="stylesheet" type="text/css" href="../css/theme-blue.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="../js/jquery.navgoco.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="../js/toc.js"></script>
+<script src="../js/customscripts.js"></script>
+<link rel="shortcut icon" href="../common_images/favicon.ico" type="image/x-icon">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+ 
+
+<script>
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+
+
+  </head>
+
+<body>
+
+   <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="fa fa-home fa-lg navbar-brand" href="home.html">&nbsp;<span class="projectTitle"> Argo Runtime Service Discovery</span></a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+
+                
+                    
+                        
+                            <li><a href="https://github.com/di2e/Argo" target="_blank">Github Repo</a></li>
+                        
+                    
+                
+
+
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                <li class="dropdown">
+                    
+                        
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                    
+                                        <li><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
+                                    
+                                
+                            </ul>
+                        
+                    
+                </li>
+
+
+                <!-- special insertion -->
+
+               
+                <!-- Send feedback function -->
+<script>
+function SendLinkByMail(href) {
+var subject= "Argo Runtime Service Discovery feedback";
+var body = "I have some feedback about the Controlling the "distance" a probe can travel page: ";
+body += window.location.href;
+body += "";
+var uri = "mailto:argodevelopment@gmail.com?subject=";
+uri += encodeURIComponent(subject);
+uri += "&body=";
+uri += encodeURIComponent(body);
+window.location.href = uri;
+}
+</script>
+
+<li><a href="javascript:(function()%7BSendLinkByMail()%3B%7D)()%3B" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+
+
+                <li>
+                    <!-- start search -->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="../js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        SimpleJekyllSearch.init({
+                            searchInput: document.getElementById('search-input'),
+                            resultsContainer: document.getElementById('results-container'),
+                            dataSource: '../search.json',
+                            searchResultTemplate: '<li><a href="{url}" title="Controlling the "distance" a probe can travel">{title}</a></li>',
+                        noResultsText: 'No results found.',
+                                limit: 10,
+                                fuzzy: true,
+                        })
+                    </script>
+                    <!-- end search -->
+                </li>
+            
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="col-lg-12">&nbsp;</div>
+
+
+    <!-- Content Row -->
+<div class="row">
+    <!-- Sidebar Column -->
+    <div class="col-md-3">
+
+        <script>
+
+            $(document).ready(function() {
+                // Initialize navgoco with default options
+                $("#mysidebar").navgoco({
+                    caretHtml: '',
+                    accordion: false,
+                    openClass: 'active', // open
+                    save: false, // leave false or nav highlighting doesn't work right
+                    cookie: {
+                        name: 'navgoco',
+                        expires: false,
+                        path: '/'
+                    },
+                    slide: {
+                        duration: 200,
+                        easing: 'linear'
+                    }
+                });
+
+                $("#collapseAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', false);
+                });
+
+                $("#expandAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', true);
+                });
+
+            });
+
+        </script>
+
+
+        <ul id="mysidebar" class="nav">
+
+
+            <span class="siteTagline"><img style="width: 100%" src="../argo_docs/images/main_logo.png"/> </span>
+            <span class="siteTagline"></span>
+            <span class="versionTagline">Version 0.4.1</span>
+
+            
+
+
+            
+                
+                    
+                
+                    
+                        <li><a href="#">Overview</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/home.html">Home</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Up-and-running-in-5-minutes.html">Up and Running in 5 Minutes</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Why-Argo-and-not-some-other-SLP.html">Why Argo and not some other SLP?</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/FAQ.html">FAQ</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">What is Argo?</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/home.html#what-is-runtime-service-discovery">What is Runtime Service Discovery</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Primary-Use-cases.html">Primary Use-Cases</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Flexible-Architecture.html">Flexible Architecture</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Roadmap.html">Roadmap</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Security.html">Security</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                     <li class="active"><a href="../argo_docs/Controlling-the-distance-a-probe-can-travel.html">Controlling the "distance" a probe can travel</a></li>
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Multicast-Plan.html">Multicast Plan</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Firewall-Changes.html">Firewall Changes</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Browser-Client-Application.html">Argo Service Browser</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Protocol</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Probe-Format.html">Argo Probe Format</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Service-Record-Examples.html">Service Record Examples</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Response-Format.html">Argo Response Format</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Architecture</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Architecture-and-Protocol.html">Architecture and Protocol</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Components</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/tag_getting_started.html">Components Overview</a></li>
+                                        
+                                    
+
+                                    
+                                        <li class="thirdlevel"><a href="#">Responder</a>
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/tag_getting_started.html">Installation</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/tag_formatting.html">Configuration</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-no_browser-mode.html">Responder no_browser mode</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-Out-of-the-box-plugins.html">Responder Out-of-the-box plugins</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-Plugin-Architecture.md">Responder Plugin Architecure</a></li>
+                                                    
+
+                                                
+                                            </ul>
+                                        </li>
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+            
+
+
+                 <!--if you aren't using the accordion, uncomment this block:-->
+                <style>
+                    .center { margin: auto; width: 80%; }
+                </style>
+                <div class="center">
+                     <p align=center class="external">
+                         <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+                     </p>
+                </div>
+
+
+                <!--<div>-->
+                    <!--<form style="border:1px solid #ccc;padding:3px;text-align:center;"-->
+                          <!--action="https://tinyletter.com/argodiscovery" method="post" target="popupwindow"-->
+                          <!--onsubmit="window.open('https://tinyletter.com/argodiscovery', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">-->
+                        <!--<p>-->
+                            <!--<label for="tlemail">Enter your email address</label>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                            <!--<input type="text" style="width:140px" name="email" id="tlemail"/>-->
+                        <!--</p>-->
+                        <!--<input type="hidden" value="1" name="embed"/>-->
+                        <!--<input type="submit" value="Subscribe"/>-->
+                        <!--<p>-->
+                            <!--<a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a>-->
+                        <!--</p>-->
+                    <!--</form>-->
+                <!--</div>-->
+    </div>
+    <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+    <script>$("li.active").parents('li').toggleClass("active");</script>
+    
+
+
+         
+
+
+            <!-- Content Column -->
+            <div class="col-md-9">
+
+                <div class="post-header">
+   <h1 class="post-title-main">Controlling the "distance" a probe can travel</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">Security, security ... got to go, got to go.</div>
+   
+
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+
+<div id="toc"></div>
+
+
+    
+
+  <p>With network traffic, the &quot;distance&quot; a piece of data can travel is measured in how many &quot;hops&quot; it takes.  A <a href="http://en.wikipedia.org/wiki/Hop_%28networking%29">&quot;hop&quot;</a> happens when that data packet traverses a router to another network.  When a data packet starts it&#39;s live, it&#39;s given a TTL (time to live) number.  The TTL represents the maximum number of network hops that packets is allowed to make in it&#39;s travels.  When a router encounters a packet with a TTL of zero, it just drops the packet and let&#39;s it die right there - it goes no further.</p>
+
+<p>When sending multicast packets, you need to be cognizant of how the network will handle the traffic you just placed on it.  With Argo, you really want control how far - in &quot;hops&quot; - a probe will travel.  Sometimes you may want it to traverse the entire known network (assuming the network allows multicast to wander freely) and sometimes you only want it to wander your local networks.</p>
+
+<p>Understanding this and effective usage of the Argo Probe TTL can dramatically increase the protocols efficiency and increase the chances of success when attempting to discover services in large, diverse and dynamic interconnected network.</p>
+
+<h2 id="argo-probes-can-set-the-ttl">Argo Probes can set the TTL</h2>
+
+<p>When creating and sending an Argo Probe, you can set the TTL.  This effectively limits the range of that probe to the number</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">ProbeGenerator</span> <span class="n">gen</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ProbeGenerator</span><span class="o">(</span><span class="s">&quot;230.0.0.1&quot;</span><span class="o">,</span> <span class="mi">4003</span><span class="o">);</span>
+<span class="n">Probe</span> <span class="n">probe</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Probe</span><span class="o">(</span><span class="n">Probe</span><span class="o">.</span><span class="na">JSON</span><span class="o">);</span>
+
+<span class="n">probe</span><span class="o">.</span><span class="na">addRespondToURL</span><span class="o">(</span><span class="s">&quot;internal&quot;</span><span class="o">,</span> <span class="s">&quot;http://1.1.1.1:8080/AsynchListener/api/responseHandler/probeResponse&quot;</span><span class="o">);</span>      
+<span class="n">probe</span><span class="o">.</span><span class="na">addServiceContractID</span><span class="o">(</span><span class="s">&quot;uuid:03d55093-a954-4667-b682-8116c417925d&quot;</span><span class="o">);</span>
+
+<span class="c1">// This sets the hop limit to only 3.  This should keep it close (in network distance)</span>
+<span class="n">probe</span><span class="o">.</span><span class="na">setHopLimit</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>  
+
+<span class="n">gen</span><span class="o">.</span><span class="na">sendProbe</span><span class="o">(</span><span class="n">probe</span><span class="o">);</span>
+</code></pre></div>
+<p>In the above example, a probe is created to find all the services of type <code>uuid:03d55093-a954-4667-b682-8116c417925d</code> that are within 3 network hops from the host that sends this probe.  From a geographic distance sense, this could be a big distance, but from a network sense, it&#39;s likely within your organization&#39;s administrative control.</p>
+
+<h2 id="what-happens-if-i-always-send-to-the-maximum-hop-limit-255">What happens if I always send to the maximum hop limit (255)?</h2>
+
+<p>Well, you certainly can.  But you&#39;ll likely get some attention from network monitors.  If you are constantly sending out probes across the universe, you might do two things: 1) get unwanted attention from security people and 2) if too many people do this, then it will eventually limit operational bandwidth on the network.</p>
+
+<p>Which means - don&#39;t.  Understand what you are looking for.  If you want to locate services that you think are &quot;close&quot; to you, start with probes with a hop limit of 2 or 3.  If you really need to look far and wide, set the hop limit higher.  Setting it to 255 is a bit of a nuclear option, but that <em>should</em> guarantee that it traverses the network to the maximum distance.  But if you do that, don&#39;t do it often and only if you really need to.</p>
+
+
+<div class="tags">
+    
+    
+    <b>Tags: </b>
+    
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+
+
+</div>
+
+
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2016 Argo. All rights reserved. <br />
+<p>Page last updated:</span> January 15, 2015<br/> Site last generated: Feb 12, 2016 <br />
+<p><img src="../common_images/company_logo.png/></p>
+                </div>
+            </div>
+</footer>
+            </div><!-- /.row -->
+
+    </div>    <!-- /.container -->
+
+</body>
+
+
+</html>
+

@@ -1,0 +1,316 @@
+[
+
+
+
+
+
+{
+"title": "Argo Architecture and Protocol",
+"tags": "plugin",
+"keywords": "plugins",
+"url": "../argo_docs/Architecture-and-Protocol.html",
+"summary": "Overview of the protocol, architecture and components of Argo"
+},
+
+
+
+
+{
+"title": "Argo Service Browser",
+"tags": "roadmapsecurityarchitecture",
+"keywords": "plugin, components, deployment, installation, security",
+"url": "../argo_docs/Argo-Browser-Client-Application.html",
+"summary": "The Argo Browser is a sample Argo discovery client"
+},
+
+
+
+
+{
+"title": "Argo Firewall Changes",
+"tags": "roadmapsecurityarchitecture",
+"keywords": "plugin, components, deployment, installation, security",
+"url": "../argo_docs/Argo-Firewall-Changes.html",
+"summary": "Poking the right holes in the firewall"
+},
+
+
+
+
+{
+"title": "Argo Flexible Architecture",
+"tags": "architecure",
+"keywords": "architecture, components, host, deployment, installation",
+"url": "../argo_docs/Argo-Flexible-Architecture.html",
+"summary": "Overview of the protocol, architecture and components of Argo"
+},
+
+
+
+
+{
+"title": "Primary Use-Cases",
+"tags": "plugin",
+"keywords": "plugins",
+"url": "../argo_docs/Argo-Primary-Use-cases.html",
+"summary": "There are a few primary use-cases for Argo.  This article describes them in a fairly high level of detail."
+},
+
+
+
+
+{
+"title": "Argo Probe Format",
+"tags": "protocolwireline-format",
+"keywords": "protocol wireline format",
+"url": "../argo_docs/Argo-Probe-Format.html",
+"summary": "The wireline format for the Argo probe."
+},
+
+
+
+
+{
+"title": "Argo Responder Out-of-the-box plugins",
+"tags": "plugin",
+"keywords": "plugin, components, deployment, installation",
+"url": "../argo_docs/Argo-Responder-Out-of-the-box-plugins.html",
+"summary": "Overview of the protocol, architecture and components of Argo"
+},
+
+
+
+
+{
+"title": "Argo Responder Plugin Architecture",
+"tags": "pluginarchitecture",
+"keywords": "plugin, components, deployment, installation",
+"url": "../argo_docs/Argo-Responder-Plugin-Architecture.html",
+"summary": "Overview of the protocol, architecture and components of Argo"
+},
+
+
+
+
+{
+"title": "Argo Responder no_browser mode",
+"tags": "architecurecomponents",
+"keywords": "responder, components, probe, browser, SA",
+"url": "../argo_docs/Argo-Responder-no_browser-mode.html",
+"summary": "Overview of the protocol, architecture and components of Argo"
+},
+
+
+
+
+{
+"title": "Argo Response Format",
+"tags": "roadmapsecurityarchitecture",
+"keywords": "plugin, components, deployment, installation, security",
+"url": "../argo_docs/Argo-Response-Format.html",
+"summary": "Response Format"
+},
+
+
+
+
+{
+"title": "Argo Roadmap",
+"tags": "roadmaparchitecture",
+"keywords": "plugin, components, deployment, installation",
+"url": "../argo_docs/Argo-Roadmap.html",
+"summary": "It's the map of the road, dummy"
+},
+
+
+
+
+{
+"title": "Argo Security",
+"tags": "roadmapsecurityarchitecture",
+"keywords": "plugin, components, deployment, installation, security",
+"url": "../argo_docs/Argo-Security.html",
+"summary": "Security, security ... got to go, got to go."
+},
+
+
+
+
+{
+"title": "Controlling the &quot;distance&quot; a probe can travel",
+"tags": "roadmapsecurityarchitecture",
+"keywords": "plugin, components, deployment, installation, security",
+"url": "../argo_docs/Controlling-the-distance-a-probe-can-travel.html",
+"summary": "Security, security ... got to go, got to go."
+},
+
+
+
+
+{
+"title": "Creating an Argo Client",
+"tags": "publishingsingle_sourcingcontent-types",
+"keywords": "client software programming",
+"url": "../argo_docs/Creating-an-Argo-Client.html",
+"summary": "Write the code necessary to get your application ready to operate with Argo."
+},
+
+
+
+
+{
+"title": "Creative uses of Argo Plug-ins",
+"tags": "plugin",
+"keywords": "plugins",
+"url": "../argo_docs/Creative-uses-of-Argo-Plug-ins.html",
+"summary": "Write the code necessary to get your application ready to operate with Argo."
+},
+
+
+
+
+{
+"title": "Frequently Asked Questions",
+"tags": "FAQ",
+"keywords": "FAQ",
+"url": "../argo_docs/FAQ.html",
+"summary": "You ask 'em.  We answer 'em"
+},
+
+
+
+
+{
+"title": "How often should a client send a probe?",
+"tags": "roadmapsecurityarchitecture",
+"keywords": "plugin, components, deployment, installation, security",
+"url": "../argo_docs/How-often-should-a-client-send-a-probe%3F.html",
+"summary": "Probes take network resources.  Send wisely."
+},
+
+
+
+
+{
+"title": "Multicast Plan",
+"tags": "roadmapsecurityarchitecture",
+"keywords": "plugin, components, deployment, installation, security",
+"url": "../argo_docs/Multicast-Plan.html",
+"summary": "When multicasting, you'll have to have a comprehensive plan for that in your network"
+},
+
+
+
+
+{
+"title": "Service Record Examples",
+"tags": "pluginarchitecture",
+"keywords": "plugin, components, deployment, installation",
+"url": "../argo_docs/Service-Record-Examples.html",
+"summary": "Some exmaples of how service records might look"
+},
+
+
+
+
+{
+"title": "Up and running in 5 minutes",
+"tags": "publishingsingle_sourcingcontent-types",
+"keywords": "startup, quick start, tutorial",
+"url": "../argo_docs/Up-and-running-in-5-minutes.html",
+"summary": "Get up and running in about 5 minutes with an Argo Responder and the Argo command line client."
+},
+
+
+
+
+{
+"title": "Why Argo and not some other SLP?",
+"tags": "FAQ",
+"keywords": "FAQ",
+"url": "../argo_docs/Why-Argo-and-not-some-other-SLP.html",
+"summary": "There are lots other Service Location Protocol - why Argo?"
+},
+
+
+
+
+{
+"title": "Support",
+"tags": "getting_started",
+"keywords": "questions, troubleshooting, contact, support",
+"url": "../argo_docs/argo_docs_support.html",
+"summary": "Contact me for any support issues."
+},
+
+
+
+
+
+
+
+{
+"title": "Introduction",
+"tags": "getting_started",
+"keywords": "",
+"url": "../argo_docs/home.html",
+"summary": ""
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+null
+]
+
+

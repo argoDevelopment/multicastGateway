@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+
+ <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Get up and running in about 5 minutes with an Argo Responder and the Argo command line client.">
+<meta name="keywords" content="publishingsingle_sourcingcontent-types,  startup, quick start, tutorial">
+<title>Up and running in 5 minutes  | Argo Runtime Service Discovery</title>
+<link rel="stylesheet" type="text/css" href="../css/syntax.css">
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="../css/modern-business.css">
+<link rel="stylesheet" type="text/css" href="../css/lavish-bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/customstyles.css">
+<link rel="stylesheet" type="text/css" href="../css/theme-blue.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="../js/jquery.navgoco.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="../js/toc.js"></script>
+<script src="../js/customscripts.js"></script>
+<link rel="shortcut icon" href="../common_images/favicon.ico" type="image/x-icon">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+ 
+
+<script>
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+
+
+  </head>
+
+<body>
+
+   <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="fa fa-home fa-lg navbar-brand" href="home.html">&nbsp;<span class="projectTitle"> Argo Runtime Service Discovery</span></a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+
+                
+                    
+                        
+                            <li><a href="https://github.com/di2e/Argo" target="_blank">Github Repo</a></li>
+                        
+                    
+                
+
+
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                <li class="dropdown">
+                    
+                        
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                    
+                                        <li><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
+                                    
+                                
+                            </ul>
+                        
+                    
+                </li>
+
+
+                <!-- special insertion -->
+
+               
+                <!-- Send feedback function -->
+<script>
+function SendLinkByMail(href) {
+var subject= "Argo Runtime Service Discovery feedback";
+var body = "I have some feedback about the Up and running in 5 minutes page: ";
+body += window.location.href;
+body += "";
+var uri = "mailto:argodevelopment@gmail.com?subject=";
+uri += encodeURIComponent(subject);
+uri += "&body=";
+uri += encodeURIComponent(body);
+window.location.href = uri;
+}
+</script>
+
+<li><a href="javascript:(function()%7BSendLinkByMail()%3B%7D)()%3B" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+
+
+                <li>
+                    <!-- start search -->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="../js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        SimpleJekyllSearch.init({
+                            searchInput: document.getElementById('search-input'),
+                            resultsContainer: document.getElementById('results-container'),
+                            dataSource: '../search.json',
+                            searchResultTemplate: '<li><a href="{url}" title="Up and running in 5 minutes">{title}</a></li>',
+                        noResultsText: 'No results found.',
+                                limit: 10,
+                                fuzzy: true,
+                        })
+                    </script>
+                    <!-- end search -->
+                </li>
+            
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="col-lg-12">&nbsp;</div>
+
+
+    <!-- Content Row -->
+<div class="row">
+    <!-- Sidebar Column -->
+    <div class="col-md-3">
+
+        <script>
+
+            $(document).ready(function() {
+                // Initialize navgoco with default options
+                $("#mysidebar").navgoco({
+                    caretHtml: '',
+                    accordion: false,
+                    openClass: 'active', // open
+                    save: false, // leave false or nav highlighting doesn't work right
+                    cookie: {
+                        name: 'navgoco',
+                        expires: false,
+                        path: '/'
+                    },
+                    slide: {
+                        duration: 200,
+                        easing: 'linear'
+                    }
+                });
+
+                $("#collapseAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', false);
+                });
+
+                $("#expandAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', true);
+                });
+
+            });
+
+        </script>
+
+
+        <ul id="mysidebar" class="nav">
+
+
+            <span class="siteTagline"><img style="width: 100%" src="../argo_docs/images/main_logo.png"/> </span>
+            <span class="siteTagline"></span>
+            <span class="versionTagline">Version 0.4.1</span>
+
+            
+
+
+            
+                
+                    
+                
+                    
+                        <li><a href="#">Overview</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/home.html">Home</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                     <li class="active"><a href="../argo_docs/Up-and-running-in-5-minutes.html">Up and Running in 5 Minutes</a></li>
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Why-Argo-and-not-some-other-SLP.html">Why Argo and not some other SLP?</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/FAQ.html">FAQ</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">What is Argo?</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/home.html#what-is-runtime-service-discovery">What is Runtime Service Discovery</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Primary-Use-cases.html">Primary Use-Cases</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Flexible-Architecture.html">Flexible Architecture</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Roadmap.html">Roadmap</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Security.html">Security</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Controlling-the-distance-a-probe-can-travel.html">Controlling the "distance" a probe can travel</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Multicast-Plan.html">Multicast Plan</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Firewall-Changes.html">Firewall Changes</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Browser-Client-Application.html">Argo Service Browser</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Protocol</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Probe-Format.html">Argo Probe Format</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Service-Record-Examples.html">Service Record Examples</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Response-Format.html">Argo Response Format</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Architecture</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Architecture-and-Protocol.html">Architecture and Protocol</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Components</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/tag_getting_started.html">Components Overview</a></li>
+                                        
+                                    
+
+                                    
+                                        <li class="thirdlevel"><a href="#">Responder</a>
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/tag_getting_started.html">Installation</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/tag_formatting.html">Configuration</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-no_browser-mode.html">Responder no_browser mode</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-Out-of-the-box-plugins.html">Responder Out-of-the-box plugins</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-Plugin-Architecture.md">Responder Plugin Architecure</a></li>
+                                                    
+
+                                                
+                                            </ul>
+                                        </li>
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+            
+
+
+                 <!--if you aren't using the accordion, uncomment this block:-->
+                <style>
+                    .center { margin: auto; width: 80%; }
+                </style>
+                <div class="center">
+                     <p align=center class="external">
+                         <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+                     </p>
+                </div>
+
+
+                <!--<div>-->
+                    <!--<form style="border:1px solid #ccc;padding:3px;text-align:center;"-->
+                          <!--action="https://tinyletter.com/argodiscovery" method="post" target="popupwindow"-->
+                          <!--onsubmit="window.open('https://tinyletter.com/argodiscovery', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">-->
+                        <!--<p>-->
+                            <!--<label for="tlemail">Enter your email address</label>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                            <!--<input type="text" style="width:140px" name="email" id="tlemail"/>-->
+                        <!--</p>-->
+                        <!--<input type="hidden" value="1" name="embed"/>-->
+                        <!--<input type="submit" value="Subscribe"/>-->
+                        <!--<p>-->
+                            <!--<a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a>-->
+                        <!--</p>-->
+                    <!--</form>-->
+                <!--</div>-->
+    </div>
+    <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+    <script>$("li.active").parents('li').toggleClass("active");</script>
+    
+
+
+         
+
+
+            <!-- Content Column -->
+            <div class="col-md-9">
+
+                <div class="post-header">
+   <h1 class="post-title-main">Up and running in 5 minutes</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">Get up and running in about 5 minutes with an Argo Responder and the Argo command line client.</div>
+   
+
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+
+<div id="toc"></div>
+
+
+    
+
+  <p>Argo is not that difficult to get installed an running in its simplest configuration.</p>
+
+<p><strong><em>NOTE:  The 0.4.x release has a RPM package for easy installation</em></strong></p>
+
+<p>There are two ways to install Argo.  The first, and easiest, is to use the RPM packages and use <code>rpm</code> or <code>yum</code> to install.  The second method uses a <code>zip</code> file or <code>tar.gz</code> tarball file.  This second method requires some manual changes to the installed files to get them working. </p>
+
+<p>This page provides the steps to get an Argo Responder up and running in 5 minutes.  In order to see what this freshly installed Responder is advertising (and to make sure it&#39;s actually working), you&#39;ll need to install the Argo command-line client as well and probe for services.  However, this is where to get started.</p>
+
+<p>There are two parts of Argo to install, depending on what you are doing.  The first step is to <a href="#argo-responder">install the Argo Responder</a>.  The second step, if required, is to <a href="#argo-client">install the Argo command-line client</a>.  This page walks you through both.</p>
+
+<p><a name=“argo-responder”></a></p>
+
+<h2 id="argo-responder">Argo Responder</h2>
+
+<blockquote>
+<ul>
+<li><a href="#rpm-package-installation">Click here for RPM Package Installation</a><br></li>
+<li><a href="#zip-or-targz-package-installation">Click here for <code>.zip</code> or <code>.tar.gz</code> Package Installation</a></li>
+</ul>
+</blockquote>
+
+<hr>
+
+<p><a name=“rpm-package-installation”></a></p>
+
+<h3 id="rpm-package-installation">RPM Package Installation</h3>
+
+<p>Installing the Responder is actually pretty easy.  In a nutshell, the steps are:</p>
+
+<ul>
+<li>Download the RPM package from argo.ws.</li>
+<li><a href="#installing-the-responder-rpm-package">Install the RPM package on the target host</a>.</li>
+<li>Edit the <code>.sh</code> or <code>.bat</code> files (only for installation from zip or tar.gz).</li>
+<li><a href="#editing-the-service-list-file">Edit the Service List configuration file</a>.</li>
+<li><a href="#start-the-responder-daemon">Start the Argo Responder daemon</a>.</li>
+</ul>
+
+<h4 id="installing-the-responder-rpm-package">Installing the Responder RPM package</h4>
+
+<p>Assuming you have downloaded the RPM package from the Argo Github release page, you should have a file called <code>argo-responder-0.4.0-BETA_1.noarch.rpm</code> (or something close to that with the latest version).  Make sure that you are logged in with an account that has privileges to execute the installation command.  Then execute the following command:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">yum localinstall argo-responder-0.4.0-BETA_1.noarch.rpm
+</code></pre></div>
+<p>This will install the Argo Responder into <code>/opt/argo/responder</code> on linux-based systems.  Ok, installation complete.  Now do a little configuration to get going.  <a href="#basic-responder-configuration">Click here</a> to jump to the configuration section.</p>
+
+<hr>
+
+<h3 id="zip-or-tar-gz-package-installation"><code>.zip</code> or <code>.tar.gz</code> Package Installation</h3>
+
+<p>On some operating system, like Windows and MAC OS, rpm and yum are not available.  Pity.</p>
+
+<p>In a nutshell, the steps are:</p>
+
+<ul>
+<li>Download the Argo Responder zip file (or tar.gz) from the argo.ws web site</li>
+<li>Unzip in a directory of your choosing (e.g. /opt/argo or C:\argo)</li>
+<li><code>set</code> or <code>export</code> the ARGO_HOME environment variable</li>
+<li><a href="#modify-responder-configuration-files">Modify a couple of the configuration files</a> (more on that in a minute - and you <em>have</em> to do this)</li>
+<li><a href="#editing-the-service-list-file">Edit the Service List configuration file</a>.</li>
+<li>Start the Argo Responder daemon with the appropriate <code>responder</code> shell script for your OS.</li>
+</ul>
+
+<p>However, to just get up and running, you can leave the editing of the <code>configFileProbeHandlerServiceList.xml</code> till later and just leave the notional services configured.</p>
+
+<h4 id="responder-zip-structure">Responder Zip Structure</h4>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">bin</span>
+  <span class="o">+-</span> <span class="n">responder</span><span class="o">.</span><span class="na">sh</span>
+  <span class="o">+-</span> <span class="n">responder</span><span class="o">.</span><span class="na">bat</span>
+<span class="n">config</span>
+  <span class="o">+-</span> <span class="n">configFileProbeHandlerConfig</span><span class="o">.</span><span class="na">prop</span>
+  <span class="o">+-</span> <span class="n">configFileProbeHandlerServiceList</span><span class="o">.</span><span class="na">xml</span>
+  <span class="o">+-</span> <span class="n">responderConfig</span><span class="o">.</span><span class="na">prop</span>
+<span class="n">lib</span>
+  <span class="o">+-</span> <span class="n">ResponderDaemon</span><span class="o">-&lt;</span><span class="n">version</span><span class="o">&gt;.</span><span class="na">jar</span>
+<span class="n">doc</span>
+  <span class="o">+-</span> <span class="n">Responder</span> <span class="n">Configuration</span><span class="o">.</span><span class="na">md</span>
+</code></pre></div>
+<h4 id="modify-responder-configuration-files">Modify Responder Configuration Files</h4>
+
+<p>There are some configuration files that need to be manually edited to point to the installation directory of Argo.  This includes the <code>responderConfig.prop</code> and the <code>configFileProbeHandlerConfig.prop</code> files.</p>
+
+<p>In each file replace the <code>@INSTALL_DIR@</code> text with the path of the Argo install directory.  Sorry about this.  The RPM install is easier as it makes an assumption about installation location.  I can’t do that in Windows with a zip file.</p>
+
+<hr>
+
+<h4 id="basic-responder-configuration">Basic Responder Configuration</h4>
+
+<p>The Responder can be a complex animal when you get into all of the potential functionality that is provided by its <a href="https://github.com/di2e/Argo/wiki/Argo-plugin-architecture">plugin architecture</a>.  However, for this tutorial, we’ll keep things simple.</p>
+
+<p>The Argo Responder uses two different sets of plugins for its operation - the <em>Transport Plugins</em> and the <em>Probe Handler Plugins.</em></p>
+
+<p>The Argo Responder uses things called <em>Transport Plugins</em> to listen for probes (Argo protocol probe messages) that come in across publish/subscribe channels.  The default Transport Plugin is the Multicast Transport.  This plugin will listen for probes on a particular multicast group address and port.  The default Argo multicast address is 230.0.0.1:4003.  This is configurable, of course.  Don’t worry about this for now, we have no need to change any of this for the moment.</p>
+
+<p>The Argo Responder also uses things called <em>Probe Handler Plugins.</em>  When a probe is picked up by one of its configured <em>Transport Plugins</em>, it’s handed off to be processed by all of the configured probe handlers.  The default Probe Handler Plugin is the Configuration File handler.  This handler has a configuration file that has all of the services that it will respond with listed in that file.  There are several other Probe Handler plugins, but for how all we need to worry about is this handler.  Which means we need to worry about the configuration file it uses.</p>
+
+<p>The Configuration File handler keeps its configuration file in <code>/opt/argo/responder/config</code>.  The default service list file is the obviously named <code>configFileProbeHandlerServiceList.xml</code>.  This is the file we’ll be editing.</p>
+
+<h4 id="editing-the-service-list-file">Editing the Service List file</h4>
+
+<blockquote>
+<p>BTW, you can edit this file while the responder is actually running.  The Configuration File Plugin will scan for changes to this file every 10 seconds or so.  If it sees that the file changed it will automatically reload it.  If there is an error in the configuration file, then it will just keep the last good one and tell you there was an error.</p>
+</blockquote>
+
+<p>The Configuration File Probe Handler Plugins reads this XML file to load up the services that it will use to respond to a probe.  The Service List file should capture the list of service metadata that you want to advertise to Argo clients who are probing for a file.  As a matter of convention the host that the Responder in running on should also host any services in this file (but that is not strictly true - but let’s not digress).</p>
+
+<p>First, let’s take a quick look at the structure of the file before we start hacking away at it.</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;servicesConfiguration&gt;</span>
+<span class="c">&lt;!-- </span>
+<span class="c">  &lt;resolveIP name=&quot;internalIP&quot; type=&quot;ni&quot;&gt;&lt;/resolveIP&gt;</span>
+<span class="c">  &lt;resolveIP name=&quot;externalIP&quot; type=&quot;uri&quot;&gt;&lt;/resolveIP&gt;</span>
+<span class="c"> --&gt;</span>
+  <span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;YOUR SERVICE ID HERE&quot;</span> <span class="na">contractID=</span><span class="s">&quot;YOUR CONTRACT ID HERE&quot;</span><span class="nt">&gt;</span>
+    … service meta data here …
+  <span class="nt">&lt;/service&gt;</span>
+  … perhaps many other services listed …
+  <span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;YOUR SERVICE ID HERE n” contractID=&quot;</span><span class="err">YOUR</span> <span class="err">CONTRACT</span> <span class="err">ID</span> <span class="err">HERE</span> <span class="err">n”</span><span class="nt">&gt;</span>
+    … service meta data here …
+  <span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;/servicesConfiguration&gt;</span>
+</code></pre></div>
+<p>Basically, there are a couple things in the file structurally.  There is a list of <code>&lt;resolveIP&gt;</code> items (we’ll get to those <a href="#notes-on-replacement-variables-in-argo-xml-files">in a minute</a>) and there is a list of <code>&lt;service&gt;</code> items.  You can have as many services as you like in the file - the limit is purely practical.</p>
+
+<p>There are two attributes of the <code>&lt;service&gt;</code> item that <strong>NEED</strong> to be filled out.  These are <code>id</code> and <code>contractID</code>.  This is what really drives the Argo protocol.</p>
+
+<p><code>service contractId</code> - this is a globally unique identifier of the <strong><em>type</em></strong> of service.  It denotes the <a href="https://en.wikipedia.org/wiki/Service-oriented_architecture#Programmatic_service_contract">service contract</a>.  Argo doesn’t care what format you use for the unique ID (e.g. UUID, URI, etc), just make sure it doesn’t collide with others types of services.</p>
+
+<p><code>service id</code> - this is the globally unique identifier of the <strong><em>instance</em></strong> of the service.  Each and every service id will be different and you’ll need to generate one when you edit the service list file.  I usually use and recommend UUIDs and use <a href="https://www.uuidgenerator.net/">this tool</a>. </p>
+
+<p>Here are some <a href="https://github.com/di2e/Argo/wiki/Service-Record-Examples">service record examples</a>.</p>
+
+<p>The following is the basic structure of the service list configuration file.</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="nt">&lt;serviceName&gt;</span>Some short human readable name<span class="nt">&lt;/serviceName&gt;</span>
+  <span class="nt">&lt;description&gt;</span>Some short human readable description<span class="nt">&lt;/description&gt;</span>
+  <span class="nt">&lt;contractDescription&gt;</span>Read description of this field below<span class="nt">&lt;/contractDescription&gt;</span>
+  <span class="nt">&lt;consumability&gt;</span>Read description of this field below<span class="nt">&lt;/consumability&gt;</span>
+  <span class="nt">&lt;ttl&gt;</span>Read description of this field below<span class="nt">&lt;/ttl&gt;</span>
+
+  <span class="c">&lt;!-- access points --&gt;</span>
+  <span class="nt">&lt;accessPoints&gt;</span>
+    <span class="nt">&lt;accessPoint</span> <span class="na">label=</span><span class="s">“any</span> <span class="err">label</span> <span class="err">that</span> <span class="err">makes</span> <span class="err">sense</span> <span class="err">-</span> <span class="err">like</span> <span class="err">internal</span> <span class="err">network“</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ipAddress&gt;&lt;/ipAddress&gt;</span>
+      <span class="nt">&lt;port&gt;&lt;/port&gt;</span>
+      <span class="nt">&lt;url&gt;&lt;/url&gt;</span>
+      <span class="nt">&lt;data&gt;</span><span class="cp">&lt;![CDATA[This is some CDATA text]]&gt;</span><span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/accessPoint&gt;</span>
+    … more access points if you need them …
+    <span class="nt">&lt;accessPoint</span> <span class="na">label=</span><span class="s">&quot;external network - NAT address&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ipAddress&gt;&lt;/ipAddress&gt;</span>
+      <span class="nt">&lt;port&gt;&lt;/port&gt;</span>
+      <span class="nt">&lt;url&gt;</span>https://1.1.1.1:443/MyAwesomeService/index.jsp<span class="nt">&lt;/url&gt;</span>
+      <span class="nt">&lt;data&gt;</span><span class="cp">&lt;![CDATA[This is some CDATA text]]&gt;</span><span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/accessPoint&gt;</span>
+  <span class="nt">&lt;/accessPoints&gt;</span>
+</code></pre></div>
+<h5 id="a-quick-description-of-the-fields-describing-a-service">A quick description of the fields describing a service:</h5>
+
+<h6 id="basic-service-metadata">Basic Service Metadata</h6>
+
+<p><code>serviceName</code> - This is a short name that is expected to be human readable, perhaps for an operator to make a decision to use it or not.</p>
+
+<p><code>description</code> - This is a short name that is expected to be human readable, perhaps for an operator to make a decision to use it or not.</p>
+
+<p><code>contractDescription</code> - this is a brief description of the <em><em>type</em></em> of services this is.  Again, for use by an operator who would be discovering this service.  This string should be specified by the service contract itself.  It could, perhaps, included a link to where the full contract is located (e.g. if its an OpenSearch service you might include http://www.opensearch.org/Specifications/OpenSearch/1.1/Draft_5).  Your full <code>contractDescription</code> then might look like:</p>
+
+<blockquote>
+<p><code>&lt;contractDescription&gt;OpenSearch 1.1 Service Contract - http://www.opensearch.org/Specifications/OpenSearch/1.1/Draft_5&lt;/contractDescription&gt;</code></p>
+</blockquote>
+
+<p><code>consumability</code> - This is an Argo protocol specific consumability indicator.  Its value can be:</p>
+
+<ul>
+<li><code>HUMAN_CONSUMABLE</code> - meaning that the access points are intended to be consumed by a human and are likely HTTP end points that ca be used by a web browser</li>
+<li><code>MACHINE_CONSUMABLE</code> - meaning that the access points are intended to be consumed by a client programmed specifically to consume this type of service - OpenSearch or Amazon/Facebook/Google services, etc.</li>
+</ul>
+
+<p><code>ttl</code> - this is the “time to live” associated with the service entry.  When a client discovers this service, this number tells the client how long they should expect this service record to be valid.  The unit is in minutes.  Services move or have a finite lifetime and this values captures that scenario.  So, if you ignore that value and the access points no longer work after the “time to live” has expired (from the time you discovered the service in the first place), then you only have yourself to blame.  For example:</p>
+
+<blockquote>
+<p><code>&lt;ttl&gt;10&lt;/ttl&gt;</code> means that this service record is only reasonably valid for 10 minutes.  The service provider may move or end the service after that time.  Either way, you should “rediscover” that service by sending out a probe for that particular service instance to get the freshest service record data.</p>
+</blockquote>
+
+<h6 id="access-points">Access Points</h6>
+
+<p>Access points are where the rubber meets the road, as it where.  This is where you can enter the actual IP address, port, url or whatever to communicate to the client where to find the service.  Now, it doesn’t mean that the client as access to the service.  It just means they know where it is on the network.</p>
+
+<p><code>label attribute</code> - The <code>label</code> attribute on the access point is some human-readable label that gives the client a hint about what kind of access point this is.  The meaning should be spelled out in the service contract or in the SOPs and TTPs of your network.</p>
+
+<p><code>ipAddress</code>, <code>port</code> and <code>url</code> - This get lumped together for explanation.  These values are used at the convenience of the service contract.  If you only have an IP address and the service contract has a well-known port, then you’ll likely only see an IP address in the access point.  If it’s a <code>HUMAN_CONSUMABLE</code> service or some REST-based service that only has a URL, then you’ll likely only see an IP address in the access point.</p>
+
+<p><code>data</code> - this is a free-for-all metadata holder.  You can put anything here.  If it’s really complex, then you might want to BASE64 encode it (especially if the response format of the probe is JSON).  But you can do anything here.  In fact,  you might just skip the <code>ipAddress</code>, <code>port</code> and <code>url</code> values and just jam everything in the <code>data</code> item.  It’s up to the service contract to figure that out.  The consuming client should know what’s in there and consume accordingly.</p>
+
+<blockquote>
+<p>You might be wondering, “do I have to modify this configuration file on every host that has a service?”.  Good question.  The answer is no.  There are other ways to “register” services and several legitimate topologies as to where you install an Argo Responder.
+The Argo Plugin architecture makes is possible to do all sorts of things.  For example, if you have a local UDDI that you keep all of your applications service endpoints in, then you can use the UDDI plugin.  The UDDI Plugin will take the Argo probe and translate it into a UDDI query and then return the result. 
+This technique is also useful when you use an API Management tool.  For example, if you use Layer 7 as your API Gateway, you can use the Argo Layer 7 plugin to translate Argo probes into queries that talk to the Layer 7 API gateway.  This means that you don’t need to “double” your work when using other “registry” type technologies.  However, you may have to build your own Argo Responder plugin to do that.  But that is actually pretty easy to do.</p>
+</blockquote>
+
+<hr>
+
+<p><a name="notes-on-replacement-variables-in-argo-xml-files"></a></p>
+
+<h5 id="notes-on-replacement-variables-in-argo-xml-files">Notes on replacement variables in Argo XML files</h5>
+
+<blockquote>
+<p>The XML processing in Argo XML files allows for replacement variables.  For example, if you have an item named <code>&lt;installDir&gt;/opt/argo&lt;/installDir&gt;</code> defined in the file, if you use the replacement variable syntax in the file, the value defined in the item will be inserted.  For example, <code>&lt;configuration&gt;${installDir}/myconfig/config.xml&lt;/configuration&gt;</code> would resolve to <code>&lt;configuration&gt;/opt/argo/myconfig/config.xml&lt;/configuration&gt;</code>.  It’s a well understood and convenient way to parameterize a configuration file.</p>
+
+<p>The <code>&lt;resolveIP&gt;</code> items are a special kind of replacement variable that can be used in the file to help facilitate a configuration that can be used on hosts without direct editing of this configuration file but still get all the IP address and URLs correct in the defined services. There are two types of resolveIP items:</p>
+
+<ul>
+<li>ni - meaning a network interface type</li>
+<li>uri - meaning a URI type</li>
+</ul>
+
+<p>A resolveIP item that looks like:
+  <code>&lt;resolveIP name=&quot;internalIP&quot; type=&quot;ni&quot;&gt;eth0:ipv4&lt;/resolveIP&gt;</code>
+will resolve to the first IPv4 address associated with network interface named <code>eth0</code>.  The full syntax and usage can be found <a href="">here</a>.
+A resolveIP item that looks like:
+  <code>&lt;resolveIP name=&quot;internalIP&quot; type=“uri”&gt;https://api.ipify.org&lt;/resolveIP&gt;</code>
+will perform a <code>HTTP GET</code> on the URL and use that response as the replacement.  This is particularly useful for NATed addresses and usage on AWS EC2 instance.  The full usage model can be found <a href="">here</a>.</p>
+</blockquote>
+
+<hr>
+
+<h3 id="start-the-responder-daemon">Start the Responder Daemon</h3>
+
+<p>Once these changes are made you can start the Responder by using the OS appropriate startup command in the <code>$ARGO_HOME/bin</code> directory.  If you are on linux you can run it in the background with the following recommended command <code>./responder.sh &amp;&gt; ../logs/responder.log &amp;</code></p>
+
+<p>Also, the RPM installer will but a link into <code>/usr/local/bin</code>.  If that is on your path, then just type <code>responder</code>.</p>
+
+<p>If everything goes well, the you will see the following line on the screen or in the log file:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Argo 0.4.0-BETA :: Responder started  [d9790f64-68fb-41d6-89e2-4a94ae1b634a]
+</code></pre></div>
+<p>This line tells you the version and the instance number of the Responder.  Each instance launch will have a unique identifier that is useful for attribution traces should such a trace be necessary for security reasons.</p>
+
+<p>A control-c or a <code>kill</code> command will cleanly exit the Responder and is the preferred method for terminating the Responder.
+The only errors you might see could be from errors reading the XML file for the services.
+Also, if the responder does not seem to be responding to probes, try rebooting the host.</p>
+
+<p>That&#39;s it.  You should be up and running and now your services are discoverable.  </p>
+
+<hr>
+
+<p><a name=“argo-client”></a></p>
+
+<h2 id="argo-client">Argo Client</h2>
+
+<blockquote>
+<ul>
+<li><a href="#argo-client-rpm-package-installation">Click here for RPM Package Installation</a><br></li>
+<li><a href="#argo-client-zip-or-targz-package-installation">Click here for <code>.zip</code> or <code>.tar.gz</code> Package Installation</a></li>
+</ul>
+</blockquote>
+
+<hr>
+
+<h3 id="argo-client-rpm-package-installation">Argo Client RPM Package Installation</h3>
+
+<p>Installing the Argo command-line client is actually pretty easy.  In a nutshell, the steps are:</p>
+
+<ul>
+<li>Download the RPM package from argo.ws.</li>
+<li><a href="#installing-the-argo-client-rpm-package">Install the RPM package on the target host</a>.</li>
+<li><a href="#start-the-argo-client">Start the Argo Client</a>.</li>
+</ul>
+
+<h4 id="installing-the-argo-client-rpm-package">Installing the Argo Client RPM package</h4>
+
+<p>Assuming you have downloaded the RPM package from the Argo Github release page, you should have a file called <code>argo-client-0.4.0-BETA_1.noarch.rpm</code> (or something close to that with the latest version).  Make sure that you are logged in with an account that has privileges to execute the installation command.  Then execute the following command:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">yum localinstall argo-client-0.4.0-BETA_1.noarch.rpm
+</code></pre></div>
+<p>This will install the Argo Responder into <code>/opt/argo/client</code> on linux-based systems.  Ok, installation complete.  Now do a little configuration to get going.  <a href="#basic-client-configuration">Click here</a> to jump to the configuration section.</p>
+
+<h3 id="argo-client-zip-or-tar-gz-package-installation">Argo Client <code>.zip</code> or <code>.tar.gz</code> Package Installation</h3>
+
+<p>On some operating system, like Windows and MAC OS, rpm and yum are not available.  Pity.</p>
+
+<p>In a nutshell, the steps are:</p>
+
+<ul>
+<li>Download the Argo Client zip file (or tar.gz) from the argo.ws web site</li>
+<li>Unzip in a directory of your choosing (e.g. /opt/argo or C:\argo)</li>
+<li><code>set</code> or <code>export</code> the ARGO_HOME environment variable</li>
+<li><a href="#modify-client-configuration-files">Modify a couple of the configuration files</a> (more on that in a minute - and you <em>have</em> to do this) <em>[yes, you could just have an environment var encoded and just change the configuration in just one place - why did Windows and Linux HAVE to be different? Plus I really didn’t want a separate Linux and Windows build]</em>.</li>
+<li>Start the Argo Client with the appropriate <code>argo</code> shell script for your OS.</li>
+</ul>
+
+<p>However, to just get up and running, you can leave the editing of the <code>configFileProbeHandlerServiceList.xml</code> till later and just leave the notional services configured.</p>
+
+<h4 id="client-zip-structure">Client Zip Structure</h4>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">bin</span>
+  <span class="o">+-</span> <span class="n">argo</span><span class="o">.</span><span class="na">sh</span>
+  <span class="o">+-</span> <span class="n">argo</span><span class="o">.</span><span class="na">bat</span>
+<span class="n">config</span>
+  <span class="o">+-</span> <span class="n">clientConfig</span><span class="o">.</span><span class="na">xml</span>
+  <span class="o">+-</span> <span class="n">multicastTransport</span><span class="o">.</span><span class="na">prop</span>
+  <span class="o">+-</span> <span class="n">amazonSNSTransport</span><span class="o">.</span><span class="na">prop</span>
+<span class="n">lib</span>
+  <span class="o">+-</span> <span class="n">CLClient</span><span class="o">-&lt;</span><span class="n">version</span><span class="o">&gt;.</span><span class="na">jar</span>
+</code></pre></div>
+<hr>
+
+<h4 id="modify-client-configuration-files">Modify Client Configuration Files</h4>
+
+<p>There are some files that need to be manually edited to point to the installation directory of Argo.  This includes the <code>argo.sh</code>, <code>argo.bat</code>, <code>argoConfig.prop</code> and the <code>configFileProbeHandlerConfig.prop</code> files.</p>
+
+<p>In each file replace the <code>@INSTALL_DIR@</code> text with the path of the Argo install directory.  Sorry about this.  The RPM install is easier as it makes an assumption about installation location.  I can’t do that in Windows with a zip file.</p>
+
+<hr>
+
+<h4 id="basic-client-configuration">Basic Client Configuration</h4>
+
+<p>You shouldn’t need to modify any of the OOTB configuration if you are using the Multicast transport on a local network (or your main network interface as a routable address).  However, networks can be complex.</p>
+
+<p>The configuration of the Argo Client can be complex if you decide that you need to use one or more other transport plugins provided by its <a href="https://github.com/di2e/Argo/wiki/Argo-plugin-architecture">plugin architecture</a>.  However, for this tutorial, we’ll keep things simple.</p>
+
+<p>Further, the Argo client runs an in-process HTTP server that it uses as a listener for responses from the Argo responders.  You have to set these parameters correctly for messages to be received by the client.</p>
+
+<p>The main client configuration file in <code>/opt/argo/client/config/clientConf.xml</code>.  Again, if your just getting things up and running on a local network, you don’t need to modify this file.  However, if you are running this in the real world, there are two configuration items you will need to change.</p>
+
+<p><code>listenerURL</code> - this is the address the client will use to launch its internal HTTP server.  An example is:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">http://localhost:8080
+</code></pre></div>
+<p>You should just include the scheme (HTTP or HTTPS), the IP address or domain name and the port.  Nothing else.  </p>
+
+<p><code>respondToURL</code> - this is the URL that is used by the Responder when it send the response back to this client.  The respondToURL <em>may</em> be different than the <code>listenerURL</code>.  This happens in NATed networks (like a home network).  If it’s empty, the it defaults to the value of the <code>listenerURL</code>.</p>
+
+<p><em><strong>NOTE ON USE IN AWS</strong></em> - You can’t use internal addresses for either of these items.  You need to use the public DNS name (not the public IP).  I would recommend that you use the <code>resolveIP</code> functionality to configure this automatically.  Here is the config:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">    &lt;resolveIP name=“externalDNS” type=“uri”&gt;http://169.254.169.254/latest/meta-data/hostname&lt;/resolveIP&gt;
+
+    &lt;listenerURL&gt;http://$(resolveIP:externalDNS}:80&lt;/listnenerURL&gt;
+    &lt;respondToURL&gt;http://$(resolveIP:externalDNS}:80&lt;/respondToURL&gt;
+</code></pre></div>
+<hr>
+
+<h3 id="start-the-argo-client">Start the Argo Client</h3>
+
+<p>Once these changes are made you can start the Argo Client by using the OS appropriate startup command in the <code>bin</code> directory. </p>
+
+<p>Also, the RPM installer will but a link into <code>/usr/local/bin</code>.  If that is on your path, then just type <code>argo</code>.</p>
+
+<p>If everything goes well, the you will see the following:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Starting Argo Client ...
+Argo &gt;
+</code></pre></div>
+<p>You can type <code>help</code> to see a list of command.  The Argo Client commands are hierarchical, so the real commands are nested. To see the sub-command for example, type <code>config --help</code> or <code>config export --help</code>.</p>
+
+<p>To discovery services, you need to the following:</p>
+
+<ul>
+<li>Create a probe - use <code>probe new</code> to do this.  You can name it and keep a list of several of them, but just one <code>UNNAMED</code> one will do for right now.</li>
+<li>Send the probe - use <code>probe send</code> for this.  This command actually sends ALL the probe setup in the client, but since we only have one, this command will do for now.</li>
+</ul>
+
+<p>At this point you should see the following output:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Starting Argo Client ...
+Argo &gt;probe new
+Created new probe named UNNAMED
+Argo &gt;probe send
+Empty list of probe names - sending all probes
+Sent probe UNNAMED on ProbeSender for Multicast Transport -  mcast group [230.0.0.1] - port [4003] on NI [eth0]
+
+Successfully cached 2 services
+Argo &gt;
+</code></pre></div>
+<p>This means that the client has received two responses and stored them in it’s local cache.  To view the cache type the following <code>cache list</code>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">1: A very short name for the Service Instance 2 [This is another awesome service. The scope of its awesomeness is eclipsed only by the other awesome service] : d21ddd0d-d0cb-43db-9605-088660ad57a1
+2: A very short name for the Service Instance 1231232313 [This is an awesome service. The scope of its awesomeness is hard to describe] : 23023a86-51f1-4b89-a32f-4e0a76804ce9
+</code></pre></div>
+<p>Your list might look different, but if you have one at all, then you are up and running.  </p>
+
+<p>If you want to see the nitty-gritty details on the cached responses, type <code>cache list -p -pretty</code> which will show the full payload and make it pretty printed.</p>
+
+
+<div class="tags">
+    
+    
+    <b>Tags: </b>
+    
+
+
+
+
+
+
+
+
+    
+    
+    <a href="tag_publishing.html" class="btn btn-default navbar-btn cursorNorm" role="button">publishing</a>
+    
+    
+    
+    <a href="tag_single_sourcing.html" class="btn btn-default navbar-btn cursorNorm" role="button">single_sourcing</a>
+    
+    
+    
+    
+    
+</div>
+
+
+
+</div>
+
+
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2016 Argo. All rights reserved. <br />
+<p>Page last updated:</span> November 30, 2015<br/> Site last generated: Feb 12, 2016 <br />
+<p><img src="../common_images/company_logo.png/></p>
+                </div>
+            </div>
+</footer>
+            </div><!-- /.row -->
+
+    </div>    <!-- /.container -->
+
+</body>
+
+
+</html>
+

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+
+ <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Some exmaples of how service records might look">
+<meta name="keywords" content="pluginarchitecture,  plugin, components, deployment, installation">
+<title>Service Record Examples  | Argo Runtime Service Discovery</title>
+<link rel="stylesheet" type="text/css" href="../css/syntax.css">
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="../css/modern-business.css">
+<link rel="stylesheet" type="text/css" href="../css/lavish-bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/customstyles.css">
+<link rel="stylesheet" type="text/css" href="../css/theme-blue.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="../js/jquery.navgoco.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="../js/toc.js"></script>
+<script src="../js/customscripts.js"></script>
+<link rel="shortcut icon" href="../common_images/favicon.ico" type="image/x-icon">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+ 
+
+<script>
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+
+
+  </head>
+
+<body>
+
+   <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="fa fa-home fa-lg navbar-brand" href="home.html">&nbsp;<span class="projectTitle"> Argo Runtime Service Discovery</span></a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+
+                
+                    
+                        
+                            <li><a href="https://github.com/di2e/Argo" target="_blank">Github Repo</a></li>
+                        
+                    
+                
+
+
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                <li class="dropdown">
+                    
+                        
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                    
+                                        <li><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
+                                    
+                                
+                            </ul>
+                        
+                    
+                </li>
+
+
+                <!-- special insertion -->
+
+               
+                <!-- Send feedback function -->
+<script>
+function SendLinkByMail(href) {
+var subject= "Argo Runtime Service Discovery feedback";
+var body = "I have some feedback about the Service Record Examples page: ";
+body += window.location.href;
+body += "";
+var uri = "mailto:argodevelopment@gmail.com?subject=";
+uri += encodeURIComponent(subject);
+uri += "&body=";
+uri += encodeURIComponent(body);
+window.location.href = uri;
+}
+</script>
+
+<li><a href="javascript:(function()%7BSendLinkByMail()%3B%7D)()%3B" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+
+
+                <li>
+                    <!-- start search -->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="../js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        SimpleJekyllSearch.init({
+                            searchInput: document.getElementById('search-input'),
+                            resultsContainer: document.getElementById('results-container'),
+                            dataSource: '../search.json',
+                            searchResultTemplate: '<li><a href="{url}" title="Service Record Examples">{title}</a></li>',
+                        noResultsText: 'No results found.',
+                                limit: 10,
+                                fuzzy: true,
+                        })
+                    </script>
+                    <!-- end search -->
+                </li>
+            
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="col-lg-12">&nbsp;</div>
+
+
+    <!-- Content Row -->
+<div class="row">
+    <!-- Sidebar Column -->
+    <div class="col-md-3">
+
+        <script>
+
+            $(document).ready(function() {
+                // Initialize navgoco with default options
+                $("#mysidebar").navgoco({
+                    caretHtml: '',
+                    accordion: false,
+                    openClass: 'active', // open
+                    save: false, // leave false or nav highlighting doesn't work right
+                    cookie: {
+                        name: 'navgoco',
+                        expires: false,
+                        path: '/'
+                    },
+                    slide: {
+                        duration: 200,
+                        easing: 'linear'
+                    }
+                });
+
+                $("#collapseAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', false);
+                });
+
+                $("#expandAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', true);
+                });
+
+            });
+
+        </script>
+
+
+        <ul id="mysidebar" class="nav">
+
+
+            <span class="siteTagline"><img style="width: 100%" src="../argo_docs/images/main_logo.png"/> </span>
+            <span class="siteTagline"></span>
+            <span class="versionTagline">Version 0.4.1</span>
+
+            
+
+
+            
+                
+                    
+                
+                    
+                        <li><a href="#">Overview</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/home.html">Home</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Up-and-running-in-5-minutes.html">Up and Running in 5 Minutes</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Why-Argo-and-not-some-other-SLP.html">Why Argo and not some other SLP?</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/FAQ.html">FAQ</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">What is Argo?</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/home.html#what-is-runtime-service-discovery">What is Runtime Service Discovery</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Primary-Use-cases.html">Primary Use-Cases</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Flexible-Architecture.html">Flexible Architecture</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Roadmap.html">Roadmap</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Security.html">Security</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Controlling-the-distance-a-probe-can-travel.html">Controlling the "distance" a probe can travel</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Multicast-Plan.html">Multicast Plan</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Firewall-Changes.html">Firewall Changes</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Browser-Client-Application.html">Argo Service Browser</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Protocol</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Probe-Format.html">Argo Probe Format</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                                    
+                                     <li class="active"><a href="../argo_docs/Service-Record-Examples.html">Service Record Examples</a></li>
+                                    
+
+                                    
+
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Argo-Response-Format.html">Argo Response Format</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Architecture</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/Architecture-and-Protocol.html">Architecture and Protocol</a></li>
+                                        
+                                    
+
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+                    
+                        <li><a href="#">Components</a>
+                            <ul>
+                                
+                                    
+                                        
+                                            <li><a href="../argo_docs/tag_getting_started.html">Components Overview</a></li>
+                                        
+                                    
+
+                                    
+                                        <li class="thirdlevel"><a href="#">Responder</a>
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/tag_getting_started.html">Installation</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/tag_formatting.html">Configuration</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-no_browser-mode.html">Responder no_browser mode</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-Out-of-the-box-plugins.html">Responder Out-of-the-box plugins</a></li>
+                                                    
+
+                                                
+                                                    
+                                                        <li><a href="../argo_docs/Argo-Responder-Plugin-Architecture.md">Responder Plugin Architecure</a></li>
+                                                    
+
+                                                
+                                            </ul>
+                                        </li>
+                                    
+
+                                
+                            </ul>
+                        </li>
+                    
+                
+            
+
+
+                 <!--if you aren't using the accordion, uncomment this block:-->
+                <style>
+                    .center { margin: auto; width: 80%; }
+                </style>
+                <div class="center">
+                     <p align=center class="external">
+                         <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+                     </p>
+                </div>
+
+
+                <!--<div>-->
+                    <!--<form style="border:1px solid #ccc;padding:3px;text-align:center;"-->
+                          <!--action="https://tinyletter.com/argodiscovery" method="post" target="popupwindow"-->
+                          <!--onsubmit="window.open('https://tinyletter.com/argodiscovery', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">-->
+                        <!--<p>-->
+                            <!--<label for="tlemail">Enter your email address</label>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                            <!--<input type="text" style="width:140px" name="email" id="tlemail"/>-->
+                        <!--</p>-->
+                        <!--<input type="hidden" value="1" name="embed"/>-->
+                        <!--<input type="submit" value="Subscribe"/>-->
+                        <!--<p>-->
+                            <!--<a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a>-->
+                        <!--</p>-->
+                    <!--</form>-->
+                <!--</div>-->
+    </div>
+    <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+    <script>$("li.active").parents('li').toggleClass("active");</script>
+    
+
+
+         
+
+
+            <!-- Content Column -->
+            <div class="col-md-9">
+
+                <div class="post-header">
+   <h1 class="post-title-main">Service Record Examples</h1>
+</div>
+
+<div class="post-content">
+
+   
+    <div class="summary">Some exmaples of how service records might look</div>
+   
+
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+
+<div id="toc"></div>
+
+
+    
+
+  <p>Some examples of <code>connection metadata blocks</code> include:</p>
+
+<h2 id="web-service">Web Service</h2>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;the unique ID of the service instance&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;url&gt;</span>some URL to a REST/SOAP or other access location<span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<p>With a Web Service, usually all you need is the URL to the service.  All the rest of the information to connect to a service is provided as part of the development of the client (perhaps through some design-time artifacts such as WSDL/WADL or some other documentation).</p>
+
+<p>There is no need to include the IP address or port of the service in the <code>ipAddress</code> or <code>port</code> elements (as they are usually included in the URL).  However, if you like, you can cut up the URL however you like (assuming the clients know how the metadata is structured).  This is a function of the service contract.</p>
+
+<h2 id="database">Database</h2>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;the unique ID of the service instance&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;url&gt;</span>jdbc:oracle:thin:@172.99.101.4:1521:AwesomeDatabase<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;data&gt;</span>
+        <span class="cp">&lt;![CDATA[&quot;User Id=scott;Password=tiger;</span>
+<span class="cp">             Data Source=oracle;Min Pool Size=10;Connection Lifetime=120;</span>
+<span class="cp">             Connection Timeout=60;Incr Pool Size=5; Decr Pool Size=2&quot;]]&gt;</span>
+     <span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<p>Here is a sample connection metadata block for an Oracle database.  I&#39;m not sure I&#39;d include the username and password here, but hey, it&#39;s your service.</p>
+
+<p>Alternatively, if the service contract explicitly declared the use of a n Oracle driver, then you might want your service record to look like this:</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;the unique ID of the service instance&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ipAddress&gt;</span>172.99.101.4<span class="nt">&lt;/ipAddress&gt;</span>
+    <span class="nt">&lt;port&gt;</span>1521<span class="nt">&lt;/port&gt;</span>
+    <span class="nt">&lt;url&gt;</span>AwesomeDatabase<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;data&gt;</span>
+        <span class="cp">&lt;![CDATA[&quot;User Id=scott;Password=tiger;</span>
+<span class="cp">             Data Source=oracle;Min Pool Size=10;Connection Lifetime=120;</span>
+<span class="cp">             Connection Timeout=60;Incr Pool Size=5; Decr Pool Size=2&quot;]]&gt;</span>
+     <span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<h2 id="message-oriented-middleware">Message-Oriented Middleware</h2>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;the unique ID of the service instance&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ipAddress&gt;</span>172.99.101.4<span class="nt">&lt;/ipAddress&gt;</span>
+    <span class="nt">&lt;port&gt;</span>7222<span class="nt">&lt;/port&gt;</span>
+    <span class="nt">&lt;url&gt;</span>AwesomeTopicName<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;data&gt;</span>
+        <span class="cp">&lt;![CDATA[&quot;topicName=AwesomeTopicName&quot;]]&gt;</span>
+     <span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<p>In the above example, which is connection metadata to a Tibco EMS instance, there are a couple ways you could go with this.  The way shown above uses the <code>ipAddress</code> and <code>port</code> for the obvious but uses the <code>url</code> element to hold the topic name.  I also include the topic name in the <code>data</code> element as well (perhaps for some backward compatibility reason).  </p>
+
+<p>You certainly could have done this:</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;the unique ID of the service instance&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;url&gt;</span>tcp://172.99.101.4:7222<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;data&gt;</span>
+        <span class="cp">&lt;![CDATA[&quot;topicName=AwesomeTopicName&quot;]]&gt;</span>
+     <span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<p>The idea here is that you have a choice about how you use the elements in the service record.  There is no convention.  In fact, you could put all your connection information in the <code>data</code> element is some Base64 encoded or encrypted format.  As long as the client receiving this service record in response to a probe knows what to do with the response payload, you&#39;re ok.  And all of the necessary instructions on how to parse and utilize the Argo response payload should be spelled out in detail in the design-time documentation for the developers when they build the client code.</p>
+
+<h2 id="a-regular-website">A Regular Website</h2>
+
+<p>The Argo discovery protocol allows the service record to provide connection information about human-consumable services as well.  There is no reason why service discovery should only be some sort of machine consumable service.  That kind of makes Argo a type of web site finder in an unstable network - especially one that has DNS disabled via cyberattack.</p>
+
+<p>This is where Argo departs a bit from other service discovery protocols in that it can tell you when the URL you have is something that will operate well through a browser or when it&#39;s really a REST RPC call.  This is done with the <code>consumability</code> modifier in the service record.  For more on that look <a href="https://github.com/di2e/Argo/wiki/Argo-Response-Format#machine_consumable-and-human_consumable">here</a>.</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span>
+    <span class="na">id=</span><span class="s">&quot;the unique ID of the service instance&quot;</span>
+    <span class="na">contractID=</span><span class="s">&quot;contract ID of HTTP websites or perhaps specifically for CNN websites&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;url&gt;</span>https://www.cnn.com<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;consumability&gt;</span>HUMAN_CONSUMABLE<span class="nt">&lt;/consumability&gt;</span>
+    <span class="nt">&lt;description&gt;</span>The human readable description<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;serviceName&gt;</span>The human readable short name of the service<span class="nt">&lt;/serviceName&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<p>In the above example, I&#39;ve selected <code>www.cnn.com</code> as a web site that I&#39;d like to advertise with Argo.  I&#39;ve included some more available metadata fields so that it makes a little more sense to the consumer.</p>
+
+<p>First, all service records have a <code>contractID</code> associated with them.  For more on service contract and service instance IDs look <a href="">here</a>.</p>
+
+<p>In this instance, I might be looking for all HTTP web sites or I might be looking for all CNN websites.  This will be defined by the <code>contractID</code> and will be known to potential consumers of the sites a priori.</p>
+
+<p>The ancillary elements <code>consumability</code>, <code>description</code> and <code>serviceName</code> are nice-to-have elements if you want to provide a little more information to the user before they click on the discovered link to the website.  Further, you could put some rich HTML (or other markup) in the <code>data</code> element for rich description.  </p>
+
+<p>The idea here, again, is that there really is no convention from the perspective of the Argo protocol.  There is only convention from the perspective of the service contract itself.  You can do whatever you want with the elements included in the protocol, however, it&#39;s assumed that clients discovering and using these service records will know what to do with the metadata when they get it.</p>
+
+<h2 id="dealing-with-services-that-have-a-ssl-and-non-ssl-end-point">Dealing with Services that have a SSL and non-SSL end-point</h2>
+
+<p>This is a bit of a special case.  There is more discussion on this topic in the section on service contract and service instance IDs <a href="">here</a>.</p>
+
+<blockquote>
+<p>If you have two different methods to access the ostensibly same service, then you really should have two separate service records.</p>
+</blockquote>
+
+<p>Sure, you could encode everything you like into the <code>data</code> element and call it a day.  For example:</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;the unique ID of the service instance&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;data&gt;</span>
+        <span class="cp">&lt;![CDATA[&quot;HTTP=http://172.99.101.4:8080; HTTPS=https://172.99.101.4:4443&quot;]]&gt;</span>
+     <span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<p>This is a bit of an anti-pattern due to how to correctly reconcile service contracts and service instance IDs.  The best way to do this is to have two service records with <strong><em>two service contracts</em></strong>.  Meaning that the HTTP access is really a different service contract than the HTTPS access method.</p>
+
+<p>The recommended practice is:</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span>
+    <span class="na">id=</span><span class="s">&quot;the unique ID of the HTTP service instance&quot;</span>
+    <span class="na">contractID=</span><span class="s">&quot;the HTTP only access contract ID&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://172.99.101.4:8080<span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+
+<span class="nt">&lt;service</span>
+    <span class="na">id=</span><span class="s">&quot;the unique ID of the HTTPS service instance&quot;</span>
+    <span class="na">contractID=</span><span class="s">&quot;the HTTPS only access contract ID&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;url&gt;</span>https://172.99.101.4:4443<span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+
+<div class="tags">
+    
+    
+    <b>Tags: </b>
+    
+
+
+
+
+
+
+
+
+    
+    
+    <a href="tag_plugin.html" class="btn btn-default navbar-btn cursorNorm" role="button">plugin</a>
+    
+    
+    
+    
+    
+</div>
+
+
+
+</div>
+
+
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2016 Argo. All rights reserved. <br />
+<p>Page last updated:</span> January 15, 2015<br/> Site last generated: Feb 12, 2016 <br />
+<p><img src="../common_images/company_logo.png/></p>
+                </div>
+            </div>
+</footer>
+            </div><!-- /.row -->
+
+    </div>    <!-- /.container -->
+
+</body>
+
+
+</html>
+

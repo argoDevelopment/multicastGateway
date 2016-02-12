@@ -3,6 +3,8 @@
 /out/
 /target/
 
+/src/resources/mcg_docs/
+
 *.class
 
 # Package Files #
