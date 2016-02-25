@@ -7,16 +7,16 @@ __        __    _ _
    \_/\_/ |_|  |_|\__\___|_|  |___/
 {% endcomment %}
 
-{% if site.project == "argo_docs_writers" %}
+{% if site.project == "docs_writers" %}
 {% assign audience = "writers" %}
-{% assign sidebar = site.data.argo_docs.argo_docs_sidebar.entries %}
-{% assign topnav = site.data.argo_docs.argo_docs_topnav.topnav %}
-{% assign topnav_dropdowns = site.data.argo_docs.argo_docs_topnav.topnav_dropdowns %}
+{% assign sidebar = site.data.docs.docs_sidebar.entries %}
+{% assign topnav = site.data.docs.docs_topnav.topnav %}
+{% assign topnav_dropdowns = site.data.docs.docs_topnav.topnav_dropdowns %}
 {% assign version = "all" %}
 {% assign product = "all" %}
 {% assign platform = "all" %}
-{% assign projectTags = site.data.argo_docs.argo_docs_tags.allowed-tags %}
-{% assign projectFolder = "argo_docs" %}
+{% assign projectTags = site.data.docs.docs_tags.allowed-tags %}
+{% assign projectFolder = "docs" %}
 {% endif %}
 
 
@@ -29,14 +29,14 @@ ____            _
                    |___/
 {% endcomment %}
 
-{% if site.project == "argo_docs_designers" %}
+{% if site.project == "docs_designers" %}
 {% assign audience = "designers" %}
-{% assign sidebar = site.data.argo_docs.argo_docs_sidebar.entries %}
-{% assign topnav = site.data.argo_docs.argo_docs_topnav.topnav %}
-{% assign topnav_dropdowns = site.data.argo_docs.argo_docs_topnav.topnav_dropdowns %}
+{% assign sidebar = site.data.docs.docs_sidebar.entries %}
+{% assign topnav = site.data.docs.docs_topnav.topnav %}
+{% assign topnav_dropdowns = site.data.docs.docs_topnav.topnav_dropdowns %}
 {% assign version = "all" %}
 {% assign product = "all" %}
 {% assign platform = "all" %}
-{% assign projectTags = site.data.argo_docs.argo_docs_tags.allowed-tags %}
-{% assign projectFolder = "argo_docs" %}
+{% assign projectTags = site.data.docs.docs_tags.allowed-tags %}
+{% assign projectFolder = "docs" %}
 {% endif %}

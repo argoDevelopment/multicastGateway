@@ -16,7 +16,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
-                {% assign topnav = site.data.argo_docs.argo_docs_topnav.topnav %}
+                {% assign topnav = site.data.docs._topnav.topnav %}
 
                 {% for entry in topnav %}
                     {% for subcategory in entry.subcategories %}
@@ -33,7 +33,7 @@
 
                 <!-- entries with drop-downs appear here -->
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
-                {% assign topnav_dropdowns = site.data.argo_docs.argo_docs_topnav.topnav_dropdowns %}
+                {% assign topnav_dropdowns = site.data.docs._topnav.topnav_dropdowns %}
                 <li class="dropdown">
                     {% for entry in topnav_dropdowns %}
                         {% for subcategory in entry.subcategories %}
@@ -58,7 +58,7 @@
 
                {% if site.project == "argo_docs_designers" or site.project == "argo_docs_writers" %}
                 {% comment %}
-                {% include custom/argo_docs/custom_menu.html %}
+                {% include custom/docs/custom_menu.html %}
                 {% endcomment %}
                 {% endif %}
                 {% include feedback.html %}

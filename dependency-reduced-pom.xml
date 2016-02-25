@@ -6,6 +6,10 @@
   <name>Multicast Gateway</name>
   <version>1.0.0</version>
   <description>Provides a sender and receiver for bridging network where multicast would naturally not cross (not multicast routeable - like between segments on the open internet)</description>
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/argoDevelopment/multicastGateway/issues</url>
+  </issueManagement>
   <developers>
     <developer>
       <id>jmsimpson68</id>
@@ -24,6 +28,11 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+  <scm>
+    <connection>scm:git:git@github.com:argoDevelopment/multicastGateway.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:argoDevelopment/multicastGateway.git</developerConnection>
+    <url>https://github.com/argoDevelopment/multicastGateway</url>
+  </scm>
   <build>
     <plugins>
       <plugin>
@@ -89,7 +98,7 @@
           </execution>
         </executions>
         <configuration>
-          <excludePackageNames>ws.argo.mcg.ws.argo.mcg.comms</excludePackageNames>
+          <excludePackageNames>ws.argo.mcg.comms</excludePackageNames>
         </configuration>
       </plugin>
       <plugin>

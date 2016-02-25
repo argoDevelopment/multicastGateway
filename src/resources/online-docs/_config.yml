@@ -8,9 +8,9 @@ platform: all
 version: all
 output: web
 
-topnav: site.data.argo_docs.argo_docs_topnav.topnav
-topnav_dropdowns: site.data.argo_docs.argo_docs_topnav.topnav_dropdowns
-projectTags: site.data.argo_docs.argo_docs_tags.allowed-tags
+topnav: site.data.docs.docs_topnav.topnav
+topnav_dropdowns: site.data.docs.docs_topnav.topnav_dropdowns
+projectTags: site.data.docs.docs_tags.allowed-tags
 
 destination: ../mcg_docs
 
@@ -18,7 +18,7 @@ topnav_title: Argo Runtime Service Discovery
 homepage_title: Argo Runtime Service Discovery
 site_title: Argo Runtime Service Discovery
 
-project_folder: argo_docs
+project_folder: docs
 company_name: Argo
 footer_image_location: ../common_images/company_logo.png
 #github_editme_path: tomjohnson1492/documentation-theme-jekyll/edit/reviews
@@ -36,7 +36,7 @@ exclude:
   - _site
   - _drafts
   - configs/
-  - doc/argo_docs_writers*
+  - doc/docs_writers*
 
 # same for all
 host: 127.0.0.1

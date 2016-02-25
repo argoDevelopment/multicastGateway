@@ -1,0 +1,234 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+# Sidebar
+entries:
+- title: Sidebar
+  subcategories:
+  - title:
+    platform: all
+    product: all
+    version: all
+    output: pdf
+    type: frontmatter
+    items:
+    - title:
+      url: /titlepage.html
+      platform: all
+      product: all
+      version: all
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      platform: all
+      product: all
+      version: all
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    platform: all
+    product: all
+    version: all
+    output: web, pdf
+    items:
+    - title: Home
+      url: /docs/home.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+    - title: Up and Running in 5 Minutes
+      url: /docs/Up-and-running-in-5-minutes.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+    - title: Why Argo and not some other SLP?
+      url: /docs/Why-Argo-and-not-some-other-SLP.html
+      platform: all
+      product: all
+      version: all
+      output: web
+
+    - title: FAQ
+      url: /docs/FAQ.html
+      platform: all
+      product: all
+      version: all
+      output: web
+
+
+  - title: What is Argo?
+    platform: all
+    product: all
+    version: all
+    output: web, pdf
+    items:
+    - title: What is Runtime Service Discovery
+      url: /docs/home.html#what-is-runtime-service-discovery
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+    - title: Primary Use-Cases
+      url: /docs/Argo-Primary-Use-cases.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+    - title: Flexible Architecture
+      url: /docs/Argo-Flexible-Architecture.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+
+
+
+    - title: Roadmap
+      url: /docs/Argo-Roadmap.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+    - title: Security
+      url: /docs/Argo-Security.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+    - title: Controlling the "distance" a probe can travel
+      url: /docs/Controlling-the-distance-a-probe-can-travel.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+    - title: Multicast Plan
+      url: /docs/Multicast-Plan.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+    - title: Firewall Changes
+      url: /docs/Argo-Firewall-Changes.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+    - title: Argo Service Browser
+      url: /docs/Argo-Browser-Client-Application.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+  - title: Protocol
+    platform: all
+    product: all
+    version: all
+    output: web, pdf
+    items:
+
+        - title: Argo Probe Format
+          url: /docs/Argo-Probe-Format.html
+          platform: all
+          product: all
+          version: all
+          output: web, pdf
+
+        - title: Service Record Examples
+          url: /docs/Service-Record-Examples.html
+          platform: all
+          product: all
+          version: all
+          output: web, pdf
+
+        - title: Argo Response Format
+          url: /docs/Argo-Response-Format.html
+          platform: all
+          product: all
+          version: all
+          output: web, pdf
+
+
+  - title: Architecture
+    platform: all
+    product: all
+    version: all
+    output: web, pdf
+    items:
+
+    - title: Architecture and Protocol
+      url: /docs/Architecture-and-Protocol.html
+      platform: all
+      product: all
+      version: all
+      output: web, pdf
+
+
+  - title: Components
+    platform: all
+    product: all
+    version: all
+    output: web, pdf
+    items:
+
+     - title: Components Overview
+       url: /docs/tag_getting_started.html
+       platform: all
+       product: all
+       version: all
+       output: web
+
+       thirdlevel:
+        - title: Responder
+          platform: all
+          version: all
+          product: all
+          output: web
+          thirdlevelitems:
+          - title: Installation
+            url: /docs/tag_getting_started.html
+            platform: all
+            version: all
+            product: all
+            output: web
+
+          - title: Configuration
+            url: /docs/tag_formatting.html
+            platform: all
+            version: all
+            product: all
+            output: web
+
+          - title: Responder no_browser mode
+            url: /docs/Argo-Responder-no_browser-mode.html
+            platform: all
+            product: all
+            version: all
+            output: web, pdf
+
+          - title: Responder Out-of-the-box plugins
+            url: /docs/Argo-Responder-Out-of-the-box-plugins.html
+            platform: all
+            product: all
+            version: all
+            output: web, pdf
+
+          - title: Responder Plugin Architecure
+            url: /docs/Argo-Responder-Plugin-Architecture.md
+            platform: all
+            product: all
+            version: all
+            output: web, pdf

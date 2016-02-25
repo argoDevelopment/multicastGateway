@@ -48,7 +48,7 @@ public class GRHandlerThread extends Thread {
    * Creates an instance of the CRHandlerThread.
    * 
    * @param s the socket to read from
-   * @param repeat flag to repeat the incomming message
+   * @param repeat flag to repeat the incoming message
    * @param outboundSocket socket on which to send
    * @param maddress multicast group address on which to send
    * @param multicastPort port on which to send
